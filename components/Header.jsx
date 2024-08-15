@@ -7,6 +7,7 @@ import Link from "next/link"
 import Negativehold from "./Negaviteholder"
 import Progresser from "./Loader"
 import CircleLoad from "./Circleloader"
+import Logout from "./Logout"
 
 const Homelink = ()=> {
     return(
@@ -68,7 +69,7 @@ export default function Header(){
                     <h1>Notifications</h1>
                     <Bell/>
                     </Link>
-
+                    <Logout/>
                 </Negativehold>
                 <>
                     

@@ -46,13 +46,14 @@ export default function LoginCard(){
       
      
         setUser(user)
+        toast("Welcome to orderBook",{description:"Now fully access our features and services."})
         setLoading(false)
         router.push('/')
      
       
       
     } catch (error) {
-      console.log('error at loggingIn',error)
+      toast('Try again',{description:"Error occured while logging user in."})
       setLoading(false)
     }
     
@@ -65,7 +66,6 @@ export default function LoginCard(){
     try {
       const userID= await phoneToken(mobile)
       setUserId(userID)
-      toast("Welcome to orderBook",{description:"Now fully access our features and services."})
       setLoading(false)
     } catch (error) {
       toast('Try again',{description:"Error occured while logging user in."})
