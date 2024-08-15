@@ -114,7 +114,7 @@ export function UserReference() {
 
     return (
         <>
-            <Card className='min-h-[350px] w-[305px]'>
+            <Card className='h-full w-full'>
                 <CardHeader>
                     <CardTitle className='text-2xl text-amber-400 flex flex-row items-center gap-2'>
                         Post us

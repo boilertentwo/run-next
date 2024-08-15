@@ -53,7 +53,7 @@ export function Dashboard(){
                 </Link>      
                 <Separator/>
                 </div>
-                <SheetFooter className='bottom-0'>
+                <SheetFooter>
                     <SheetClose asChild>
                         <Negativehold loader={Progresser} negative={EmptyBar}>
                                 <Logout/>

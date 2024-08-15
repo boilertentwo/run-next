@@ -25,11 +25,11 @@ export default function Home() {
             <Scroller>
                 <HeroSlide title="PARTITION DESIGNS FOR YOUR ROOMS." description="This is the first slide" bgImage={'/4.jpg'}/>
                 <HeroSlide title="SEE-THROUGH DESIGNS FOR YOUR MANDIRS." description="This is the second slide" bgImage={'/2.jpg'} />
-                <HeroSlide title="PICK-UP. CRAFTING. DELIVERY." description="This is the third slide" bgImage={'/3.jpg'} />
+                <HeroSlide title="PICK-UP AND CRAFTING AND DELIVERY!" description="This is the third slide" bgImage={'/3.jpg'} />
             </Scroller>
           </div>
-          <div className="relative z-10 w-full ml-12 mt-12 lg:w-1/3 mx-auto lg:mx-0 xl:ml-auto">
-            <UserReference />
+          <div className="relative z-10 w-3/4  mt-12 mx-4 md:w-1/3 xl:w-80 xl:right-16 lg:w-1/3 lg:mx-0 xl:ml-auto">
+                <UserReference />
           </div>
         </div>
       </main>
