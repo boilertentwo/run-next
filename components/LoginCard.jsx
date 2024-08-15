@@ -16,6 +16,7 @@ import { logSession, phoneToken } from "@/lib/appwrite.config";
 import { useRouter } from "next/navigation";
 import { LoaderCircle, MessageSquareCode, Smartphone } from "lucide-react";
 import { useAuthStore } from "@/lib/zustand/store";
+import { toast } from "sonner";
 
 export default function LoginCard(){
     const {register, handleSubmit, formState:{errors}} = useForm()
@@ -64,9 +65,10 @@ export default function LoginCard(){
     try {
       const userID= await phoneToken(mobile)
       setUserId(userID)
+      toast("Welcome to orderBook",{description:"Now fully access our features and services."})
       setLoading(false)
     } catch (error) {
-      console.log('Error at client-phoneToken',error)
+      toast('Try again',{description:"Error occured while logging user in."})
       setLoading(false)
     }
     
