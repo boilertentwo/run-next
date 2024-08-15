@@ -180,7 +180,7 @@ export function UserReference() {
                                         )}
                                     </AlertDialogDescription>
                                     {isLoggedIn && !hasError ? (
-                                        <span>We'll notify you in a moment</span>
+                                        <span>We will notify you in a moment</span>
                                     ) : (
                                         hasError ? null : <><PositiveHold loader={CircleLoad} positive={null}><Label htmlFor='contact'>How to send the quotation?</Label><Input type='text' id='contact' placeholder='Email Id or WhatsApp no.' onChange={(e)=>{setContact(e.target.value)}}/></PositiveHold></> 
                                     )}
