@@ -39,7 +39,7 @@ export function VerifyOtp(){
             Verify OTP 
           </CardTitle>
           <CardDescription>
-            Enter the OTP we've sent to you.
+            Enter the OTP we sent to you.
           </CardDescription>
         </CardHeader>
         <CardContent>
