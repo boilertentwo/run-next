@@ -68,7 +68,7 @@ export default function LoginCard(){
       setUserId(userID)
       setLoading(false)
     } catch (error) {
-      toast('Try again',{description:"Error occured while logging user in."})
+      toast('Error occured',{description:"Check internet connection and try again"})
       setLoading(false)
     }
     

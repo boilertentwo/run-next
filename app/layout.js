@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) { 
   return (
     <html suppressHydrationWarning lang="en">
-        <body className={`${inter.className} md:mx-[175px] xl:mx-[100px]`}>
+        <body className={`${inter.className} lg:px-10`}>
         <AuthProvider>
         <Themeprovider>
               <Header></Header>

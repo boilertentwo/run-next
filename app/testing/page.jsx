@@ -3,18 +3,18 @@ import Tester from '@/components/TestComponent'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import crypto from 'crypto'
-import { useEffect } from 'react'
-import { uploadUserImage } from '@/lib/cloudinary.config'
+import { useEffect, useState } from 'react'
+import { getCloudImages, uploadUserImage } from '@/lib/cloudinary.config'
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogHeader, AlertDialogFooter, AlertDialogAction } from '@/components/ui/alert-dialog';
 import { CheckCircle, LoaderCircle } from 'lucide-react'
 import { useAuthStore } from '@/lib/zustand/store'
 import { cookier } from '../test'
 import { toast } from 'sonner'
-
+import { CldImage } from 'next-cloudinary'
 
 
 export default function Testing(){
-  
+  const [images,setImages] = useState([])
   // useEffect(()=>{
   //   cookier().then((result)=>{console.log(result.value)}).catch((error)=>{console.log(error)})
   // },[])
@@ -24,13 +24,33 @@ export default function Testing(){
     // const buffer = new Uint8Array(arrayBuffer)
     // const publicId = await uploadUserImage(buffer)
     // console.log(file)
-
+  useEffect(()=>{
+    const folder = 'ms-crafts AND tags=lg'
+    getCloudImages(folder).then((result)=>{setImages(result)}).catch((error)=>{toast("Error getting images",{description:'Try reloading page'})})
+    
+  },[])
   
   
   return(
     <>
-      <Button onClick={()=>{toast('Hello',{description:"Checking whether it's working or not"})}}>Toast</Button>
-    </>
+    {images && Array.isArray(images) && images.length > 0 ? (
+        <div className="min-h-screen w-full flex flex-row justify-around items-start p-4 snap-mandatory snap-always overflow-x-auto gap-2">
+            {images.map((obj, index) => (
+                <CldImage
+                    key={index}
+                    src={obj.public_id}
+                    width="50"
+                    height="50"
+                    alt={`Image ${index + 1}`}
+                />
+            ))}
+        </div>
+    ) : (
+        <div className="w-full min-h-600 flex flex-col justify-center items-center">
+            <p>No images</p>
+        </div>
+    )}
+</>
   )
 }
 

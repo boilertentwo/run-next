@@ -23,7 +23,7 @@ export function Dashboard(){
     return(
         <>
             <Sheet>
-            <SheetTrigger className="xl:hidden"><Menu/></SheetTrigger>
+            <SheetTrigger className="lg:hidden"><Menu/></SheetTrigger>
             <SheetContent side={'left'}>
                 <SheetHeader>
                 <SheetTitle className='text-yellow-500 text-2xl mt-4 text-left'>Explore</SheetTitle>
