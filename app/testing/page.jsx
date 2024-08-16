@@ -34,7 +34,7 @@ export default function Testing(){
   return(
     <>
     {images && Array.isArray(images) && images.length > 0 ? (
-        <div className="min-h-screen w-full flex flex-row justify-around items-start p-4 snap-mandatory snap-always overflow-x-auto gap-2">
+        <div className="min-h-screen w-full flex flex-row justify-around items-start m-2 p-4 snap-mandatory snap-always overflow-x-auto gap-2">
             {images.map((obj, index) => (
                 <CldImage
                     key={index}
