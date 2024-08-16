@@ -1,7 +1,13 @@
-export default function Itempage({params}){
+'use client'
+import { CldImage } from "next-cloudinary"
+
+export default function ImageForm({params}){
     return(
         <>
-            <h1>item showing : {params.itemID} from model : {params.modelID}</h1>
+            <div className="min-h-full min-w-full p-6 flex flex-col items-center">
+                 <CldImage alt="crafted image" src={`${params.modelID}/${params.itemID}`} width='100' height='100'/>
+            </div>
+            
         </>
     )
 }

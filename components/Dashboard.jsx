@@ -16,13 +16,17 @@ import Logout from "./Logout";
 import Negativehold from "./Negaviteholder";
 import Progresser from "./Loader";
 import { EmptyBar } from "./StatusMessage";
+import { Button } from "./ui/button";
 
 
   
 export function Dashboard(){
     return(
         <>
-            <Sheet>
+            
+
+            
+            <Sheet >
             <SheetTrigger className="lg:hidden"><Menu/></SheetTrigger>
             <SheetContent side={'left'}>
                 <SheetHeader>
@@ -63,6 +67,7 @@ export function Dashboard(){
             </SheetFooter>
             </SheetContent>
         </Sheet>
+        
         </>
     )
 }

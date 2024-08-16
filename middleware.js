@@ -21,5 +21,5 @@ export async function middleware(request) {
 
 
 export const config = {
-    matcher: ['/model/:path*','/orders','/notification' ,'/login'],
+    matcher: ['/model','/orders','/notification' ,'/login'],
 };

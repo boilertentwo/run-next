@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <main className='h-screen w-full p-3'>
+      <main className='h-screen w-full p-3 md:text-sm'>
         <div className="relative h-[650px] xl:h-[650px] w-full rounded-xl flex justify-center items-center overflow-hidden">
         
           <div className="absolute inset-0 z-0  flex h-full">
