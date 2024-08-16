@@ -12,12 +12,17 @@ export const cookier = ()=>{
     return user
 }
 
-export async function clearSession(){
-    const {account} = await createSessionClient()
-    cookies().delete('orderBook-secret')
-    cookies().delete('oB-user')
-    await account.deleteSession('current')
+export async function clearSession() {
+    try {
+        const { account } = await createSessionClient();
+        await account.deleteSession('current');
+        cookies().delete('orderBook-secret');
+        cookies().delete('oB-user');
+    } catch (error) {
+        throw error;
+    }
 }
+
 
 
 export const sendOtp = async(contact)=>{
