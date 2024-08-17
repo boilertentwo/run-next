@@ -8,10 +8,8 @@ import { Skeleton } from '@/components/ui/skeleton'; // Import your skeleton com
 export default function ClientImageGallery({ images }) {
   const router = useRouter();
   return (
-    <div className="h-auto w-full flex flex-row justify-around items-start p-4 mx-4 scroll-mx-px snap-mandatory snap-x overflow-x-auto gap-4">
-      {!images ? (
-        <Skeleton className="h-[75px] w-[75px]"></Skeleton> // Adjust size to match your images
-      ) : (
+    <div className="h-auto w-full flex flex-row justify-around items-start p-4 scroll-smooth snap-mandatory snap-x overflow-x-auto gap-4">
+      {
         images.map((obj, index) => (
           <CldImage
             key={index}
@@ -19,11 +17,11 @@ export default function ClientImageGallery({ images }) {
             width="75"
             height="75"
             alt={`Image ${index + 1}`}
-            className="snap-start snap-always"
+            className="snap-center snap-always scroll-smooth"
             onClick={() => router.push(`/model/${obj.public_id}`)}
           />
         ))
-      )}
+      }
     </div>
   );
 }

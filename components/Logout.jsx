@@ -21,7 +21,7 @@ export default function Logout() {
   const router = useRouter();
   const Logout = useAuthStore((state) => state.logOut);
 
-  const loggingOut = () => {
+   const loggingOut = () => {
       Logout()
       useAuthStore.persist.clearStorage()
       toast("You're Logged out!",{description:"Login to get follow back on orders"})
