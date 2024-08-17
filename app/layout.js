@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Craft and Carve | orderBook",
+
   description: "Get CNC crafts and services at lowest price",
 };
 
