@@ -4,9 +4,15 @@ import { cookier } from "./app/test";
 
 export async function middleware(request) {
     const url = request.nextUrl;
+    let isLoggedIn;
 
-    const isLoggedIn = cookier()
-    
+    try {
+        const result = await getLoggedInUser();
+        isLoggedIn = Boolean(result);
+    } catch (error) {
+        console.error("An error occurred while checking the user status:", error);
+        return NextResponse.redirect(new URL('/error', url));
+    }
 
     if (isLoggedIn && url.pathname.startsWith('/login')) {
         return NextResponse.redirect(new URL('/', url));
@@ -16,10 +22,8 @@ export async function middleware(request) {
         return NextResponse.redirect(new URL('/login', url));
     }
 
-    NextResponse.next();
-    
+    return NextResponse.next();
 }
-
 
 export const config = {
     matcher: ['/model','/orders','/notification' ,'/login'],
