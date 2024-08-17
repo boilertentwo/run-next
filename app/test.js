@@ -7,7 +7,7 @@ import { redirect } from "next/navigation"
 
 export const cookier = ()=>{
     
-    const user = cookies().get('oB-user')
+    const user = cookies().get('orderBook-secret')
     
     return user
 }
