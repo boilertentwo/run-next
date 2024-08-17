@@ -1,6 +1,6 @@
 import { useAuthStore } from "@/lib/zustand/store"
 
-export default function Negativehold({loader:LoadingComponent,positive:PositiveComponent,negative:NegativeComponent,children}){
+export default function Negativehold({loader:LoadingComponent,negative:NegativeComponent,children}){
     const loading = useAuthStore((state)=>state.loading)
     const isLoggedIn = useAuthStore((state)=>state.isAuthenticated)   
     

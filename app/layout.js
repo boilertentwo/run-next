@@ -10,7 +10,7 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Craft and Carve | orderBook",
+  title: "Craft N Carve | orderBook",
 
   description: "Get CNC crafts and services at lowest price",
 };

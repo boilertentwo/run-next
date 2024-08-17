@@ -12,6 +12,11 @@ export const cookier = ()=>{
     return user
 }
 
+
+export async function UserFlag(){
+    
+}
+
 export async function clearSession() {
     try {
         const { account } = await createSessionClient();

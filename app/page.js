@@ -15,8 +15,8 @@ const HeroSlide = ({ title, bgImage }) => {
 
 
 export default function Home() {
-   
-  const folder2 = "ms-crafts AND tags=medium"
+  const folder1 = "ms-crafts AND tags=medium"
+  const folder2 = "ms-crafts AND tags=lg"
   return (
     <>
       <main className='h-full w-full p-3 flex flex-col justify-start items-center gap-2 overflow-y-auto scroll-smooth'>
@@ -33,8 +33,11 @@ export default function Home() {
                 <UserReference />
           </div>
         </div>
-        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row justify-start items-center mt-3 px-4"><span>Panels</span></div>   
+        <div className='hidden min-h-48 w-full text-center lg:flex flex-col gap-2 justify-center items-center'><span className='md:text-3xl lg:text-4xl font-extrabold'>or Choose from our catalogue</span><span className='font-light text-amber-300 md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
+        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span>Panels</span></div>   
         <ServeImages folder={folder2}/>
+        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span>Borders</span></div>   
+        <ServeImages folder={folder1}/>
          
       </main>
     </>
