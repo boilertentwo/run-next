@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Home | orderBook",
-  description: "Get service at lowest price",
+  description: "Get CNC crafts and services at lowest price",
 };
 
 export default function RootLayout({ children }) { 
