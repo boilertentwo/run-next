@@ -7,8 +7,8 @@ export async function middleware(request) {
     let isLoggedIn;
 
     try {
-        const result = await getLoggedInUser();
-        isLoggedIn = Boolean(result);
+        isLoggedIn = await getLoggedInUser();
+        
     } catch (error) {
         console.error("An error occurred while checking the user status:", error);
         return NextResponse.redirect(new URL('/error', url));
