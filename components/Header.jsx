@@ -56,6 +56,7 @@ export default function Header(){
         toast("You're Logged out!",{description:"Login to get follow back on orders"})
     }
     useEffect(() => {
+        toast('Running. . . ')
         const checkUser = () => {
           try {
             const result = cookier(); 
