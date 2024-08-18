@@ -59,6 +59,12 @@ const makeToast = ({title,description}) => {
 export function UserReference() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const isLoggedIn = useAuthStore((state)=>state.isAuthenticated);
+    const LogOut = useAuthStore((state)=>state.logOut)
+    const loggingOut = () => {
+        LogOut()
+        useAuthStore.persist.clearStorage()
+        toast("You're Logged out!",{description:"Login to get follow back on orders"})
+    }
     const [userId, setUserId] = useState()
     const [loading, setLoading] = useState(false);
     const [hasError, setHasError] = useState(false); // State to track form errors
@@ -67,7 +73,9 @@ export function UserReference() {
     useEffect(()=>{
          
         if(isLoggedIn){
-            cookier().then((result)=>{setUserId(result.value)}).catch((error)=>{throw error})
+            cookier().then((result)=>{setUserId(result.value)}).catch((error)=>{
+                loggingOut()
+                toast('User logged-out',{description:'Cannot get your user cookies'})})
         }
          if (Object.keys(errors).length > 0) {
             setHasError(true); // Set error state if form has validation errors

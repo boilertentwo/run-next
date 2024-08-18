@@ -49,29 +49,8 @@ const Negative = () => {
 
 
 export default function Header(){
-    const {logOut} = useAuthStore((state)=>state.logOut)
-    const loggingOut = () => {
-        logOut()
-        useAuthStore.persist.clearStorage()
-        toast("You're Logged out!",{description:"Login to get follow back on orders"})
-    }
-    useEffect(() => {
-        
-        const checkUser = () => {
-          try {
-            const result = cookier(); 
-            const userExists = Boolean(result);
-      
-            if (!userExists) {
-              loggingOut();
-            }
-          } catch (error) {
-            toast('Check internet connection', { description: "Error occurred reading cookies" });
-          }
-        };
-      
-        checkUser();
-      }, []);
+    
+    
      
     return(
         <>

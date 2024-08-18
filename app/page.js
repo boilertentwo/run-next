@@ -5,11 +5,11 @@ import ServeImages from '@/lib/cloudinary.config';
 const HeroSlide = ({ title, bgImage }) => {
   return (
     <div
-      className="flex flex-col items-center justify-center  bg-cover xl:bg-contain bg-center bg-no-repeat w-full h-full"
+      className="flex flex-row items-center justify-center bg-cover xl:bg-contain bg-center bg-no-repeat w-full h-full"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <h1 className=" xl:h-64 xl:w-80 mt-9 ml-11 xl:mt-48 text-3xl xl:text-4xl xl:ml-48 font-bold">{title}</h1>
-       </div>
+      <h1 className="lg:text-center lg:w-96 xl:h-64 xl:w-80 mt-9 ml-11 xl:mt-48 text-3xl xl:text-4xl xl:ml-48 font-bold">{title}</h1>
+    </div>
   );
 };
 
@@ -33,10 +33,10 @@ export default function Home() {
                 <UserReference />
           </div>
         </div>
-        <div className='hidden min-h-48 w-full text-center lg:flex flex-col gap-2 justify-center items-center'><span className='md:text-3xl lg:text-4xl font-extrabold'>or Choose from our catalogue</span><span className='font-light text-amber-300 md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
-        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span>Panels</span></div>   
+        <div className='hidden min-h-48 w-full text-center lg:flex flex-col gap-2 justify-center items-center'><span className='md:text-3xl lg:text-4xl font-extrabold '>or choose from our catalogue</span><span className='font-light bg-gradient-to-r from-sky-200 to-sky-700 bg-clip-text text-transparent md:text-lg lg:text-xl'>Click on any design to get instant quotation</span></div>
+        <div className="h-full w-full text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Panels</span></div>   
         <ServeImages folder={folder2}/>
-        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span>Borders</span></div>   
+        <div className="h-full w-full text-amber-300 text-xl font-bold flex flex-row lg:text-2xl justify-start items-center mt-3 px-4"><span className='bg-gradient-to-r from-amber-300 to-amber-900 bg-clip-text text-transparent'>Borders</span></div>   
         <ServeImages folder={folder1}/>
          
       </main>
