@@ -135,7 +135,7 @@ export function UserReference() {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <CardContent className="space-y-4">
                         <div className="relative flex flex-col gap-4 mb-3">
-                            <Label htmlFor='image' className='text-md flex flex-row items-center gap-2'>1. Design</Label>
+                            <Label htmlFor='image' className='text-md flex flex-row items-center gap-2'>1. Upload</Label>
                             <Input
                                 type="file"
                                 id="image"
