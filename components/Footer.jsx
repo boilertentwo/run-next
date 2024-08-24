@@ -1,4 +1,4 @@
-import {  } from "lucide-react" 
+
 
 
 export default function Footer(){
@@ -6,7 +6,7 @@ export default function Footer(){
         <>
             <main className="h-24 w-full flex">
                     <div>
-                        <Instagram/>
+                        
                     </div>
             </main>
         </>

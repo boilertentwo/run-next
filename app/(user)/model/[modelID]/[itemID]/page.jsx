@@ -300,7 +300,7 @@ export default function ImageForm({ params }) {
         </div>
         <div className="max-h-[400px] w-full p-6 border-2 rounded-lg shadow-lg">
           <ul className="list-disc w-auto flex flex-col p-3 gap-4 text-sky-200">
-            <li>We're finalizing the crafting cost to offer you the best deal.</li>
+            <li>We are finalizing the crafting cost to offer you the best deal.</li>
             <li>As an inaugural offer, no delivery charges will be added, but soon costs will be included based on your location.</li>
             <li>Only registered users can place orders for the models shown.</li>
             <li>We may call your registered phone number to confirm your delivery location.</li>
