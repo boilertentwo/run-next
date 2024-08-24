@@ -12,13 +12,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Craft N Carve | orderBook",
 
-  description: "Get CNC crafts and services at lowest price",
+  description: "Get CNC crafts at lowest price",
 };
 
 export default function RootLayout({ children }) { 
   return (
     <html suppressHydrationWarning lang="en">
-        <body className={`${inter.className} lg:px-10`}>
+        <body className={`${inter.className} md:px-10`}>
         <AuthProvider>
         <Themeprovider>
               <Header></Header>

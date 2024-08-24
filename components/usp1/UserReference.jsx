@@ -21,8 +21,8 @@ import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, 
 import { AlertDialogCancel } from '@radix-ui/react-alert-dialog';
 import Negativehold from '../Negaviteholder';
 import { PositiveHold } from '../PositiveHolder';
-import { makeOrder } from '@/lib/appwrite.config';
-import { unknownOrder } from '@/lib/appwrite.nonuser';
+import { makePost } from '@/lib/appwrite.config';
+import { unknownPost } from '@/lib/appwrite.nonuser';
 import { toast } from 'sonner';
 
 const UserContact = ({ register, errors }) => {
@@ -73,9 +73,10 @@ export function UserReference() {
     useEffect(()=>{
          
         if(isLoggedIn){
-            cookier().then((result)=>{setUserId(result.value)}).catch((error)=>{
-                loggingOut()
-                toast('User logged-out',{description:'Cannot get your user cookies'})})
+            cookier()
+            .then((result)=>{setUserId(result.value)})
+            .catch((error)=>{
+                return null})
         }
          if (Object.keys(errors).length > 0) {
             setHasError(true); // Set error state if form has validation errors
@@ -104,7 +105,7 @@ export function UserReference() {
             }
             else{
                 const orderObj = { imageId: publicId, height: queryHeight, width: queryWidth,contactUserAt: userId, loggedUser: true };
-                makeOrder(orderObj).then((result)=>{toast("You order is being crafted",{description:"We'll reach out to you in 24 hours"})}).catch((error)=>{toast('Error occured',{description:'While posting error occured'})})
+                makePost(orderObj).then((result)=>{toast("You post reached us",{description:"We'll reach out to you in 24 hours"})}).catch((error)=>{toast('Please try again!',{description:'While posting error occured'})})
                 reset();
             }
         } else {
@@ -116,7 +117,7 @@ export function UserReference() {
     }
     const submitContact = () =>{
         const nonUserOrder = {...orderObject,contactUserAt:contact,loggedUser:false}
-        unknownOrder(nonUserOrder).then((result)=>{toast("We'll contact you with quotation",{description:'Consider Logging in for better services.'})}).catch((error)=>{toast('Try again.',{description:'Error while posting.'})}).finally(reset())
+        unknownPost(nonUserOrder).then((result)=>{toast("We'll contact you with quotation",{description:'Consider Logging in for better services.'})}).catch((error)=>{toast('Try again.',{description:'Error while posting.'})}).finally(reset())
         
     }
 

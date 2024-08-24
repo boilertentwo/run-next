@@ -57,7 +57,7 @@ export default function Header(){
             <div className="h-16 w-full flex flex-row justify-between items-center p-4">
                 <Dashboard/>
                 <Homelink></Homelink>
-                <div className="min-w-48 hidden lg:flex flex-row justify-between items-center gap-5 ">
+                <div className="min-w-48 hidden md:flex flex-row justify-between items-center gap-5 ">
                 
                 
                 <Negativehold loader={CircleLoad} negative={Negative} >
@@ -82,7 +82,7 @@ export default function Header(){
                 
 
                 </div>
-                <div className="lg:hidden flex">
+                <div className="md:hidden flex">
                 <Negativehold loader={CircleLoad} negative={LoginLink}>
                     <Link href={'/orders'}>
                         <ShoppingCart/>

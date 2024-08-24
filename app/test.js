@@ -7,10 +7,12 @@ import { redirect } from "next/navigation"
 
 export const cookier = ()=>{
     
-    const user = cookies().get('orderBook-secret')
+    const user = cookies().get('oB-user')
     
     return user
 }
+
+
 
 
 export async function UserFlag(){

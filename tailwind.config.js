@@ -13,7 +13,7 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        
       },
     },
     extend: {
@@ -96,5 +96,18 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none',  /* IE 10+ */
+          'scrollbar-width': 'none',  /* Firefox */
+          '&::-webkit-scrollbar': {
+            display: 'none'  /* Safari and Chrome */
+          }
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }

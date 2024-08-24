@@ -24,7 +24,7 @@ export default function Logout() {
    const loggingOut = () => {
       Logout()
       useAuthStore.persist.clearStorage()
-      toast("You're Logged out!",{description:"Login to get follow back on orders"})
+      toast("You're Logged out!",{description:"Login to get follow back on orders",action:{label:'Home', onClick:()=>router.push('/')}})
   }
 
   const handleLogout = () => {
