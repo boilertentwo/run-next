@@ -28,7 +28,8 @@ export async function middleware(request) {
 export const config = {
     matcher: ['/model','/orders','/notification' ,'/login'],
     unstable_allowDynamic: [
-        './components/UserOrders.jsx' ,
+        './components/UserOrders.jsx',
+        './lib/appwrite.config.js',
         '/node_modules/next-cloudinary/**', 
       ],
 };
