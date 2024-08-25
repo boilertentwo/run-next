@@ -1,6 +1,5 @@
 'use client'
-
-import { CldImage } from "next-cloudinary";
+import { Button } from "./ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import { Separator } from "./ui/separator";
@@ -25,22 +24,14 @@ export default function UserOrders({ orders }) {
               <AccordionTrigger>
                 <div className="w-full flex justify-between items-center text-slate-400 p-4">
                   <strong className="text-lg font-medium text-white">Order #{index + 1}</strong>
-                  <RelativeTime date={obj.orderedat} />
+                  {obj.paid?<span className="text-emerald-600">Paid</span>:<RelativeTime date={obj.orderedat} />}
                 </div>
               </AccordionTrigger>
               <AccordionContent>
                 <section className="flex flex-col sm:flex-col md:flex-col lg:flex-row justify-between items-start lg:items-center px-4 py-4 space-y-4 lg:space-y-0">
                   {/* Image Section */}
                   <div className="relative w-full lg:w-1/3 h-32 px-4 lg:h-36 overflow-hidden">
-                    <CldImage
-                      src={obj.imageid}
-                      width="100"
-                      height="100"
-                      alt="ordered image"
-                      className="object-cover w-full h-full absoulte inset-0 rounded-md"
-                      angle={90}
-                      onClick={()=>router.push(`/model/${obj.imageid}`)}
-                    />
+                    <Button className='size-full bg-transparent text-white border-amber-400 border-2 border-dotted' onClick={()=>router.push(`/model/${obj.imageid}`)}>Click to view design</Button>
                   </div>
                   {/* Details Section */}
                   <div className="w-full lg:w-2/3 space-y-2 text-slate-400">
