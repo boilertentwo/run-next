@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getLoggedInUser } from "./lib/appwrite.config";
-import { cookier } from "./app/test";
+
 
 export async function middleware(request) {
     const url = request.nextUrl;
