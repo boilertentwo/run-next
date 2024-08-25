@@ -1,9 +1,14 @@
 'use client'
-import { CldImage } from "next-cloudinary";
+
+import dynamic from 'next/dynamic';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import { Separator } from "./ui/separator";
 import OrderProgress from "./OrderProgress";
+import { useRouter } from 'next/navigation';
+
+const CldImage = dynamic(() => import('next-cloudinary').then(mod => mod.CldImage), { ssr: false });
+
 
 export const RelativeTime = ({ date }) => {
   const formattedDate = formatDistanceToNow(parseISO(date), { addSuffix: true });
@@ -11,6 +16,7 @@ export const RelativeTime = ({ date }) => {
 };
 
 export default function UserOrders({ orders }) {
+    const router = useRouter()
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {orders.map((obj, index) => (
@@ -34,6 +40,7 @@ export default function UserOrders({ orders }) {
                       alt="ordered image"
                       className="object-cover w-full h-full absoulte inset-0 rounded-md"
                       angle={90}
+                      onClick={()=>router.push(`/model/${obj.imageid}`)}
                     />
                   </div>
                   {/* Details Section */}
