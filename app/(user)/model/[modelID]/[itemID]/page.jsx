@@ -71,7 +71,7 @@ export default function ImageForm({ params }) {
     } else {
       setHasError(false);
     }
-  }, [formValues, errors]);
+  }, [formValues, errors, calculatePrice]);
 
   const onSubmit = (data) => {
     const orderObj = {

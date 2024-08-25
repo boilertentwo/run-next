@@ -30,7 +30,7 @@ export default function Home() {
                   <AccordionContent>
                     <div className='p-4 bg-transparent '>
                     <ol className='flex flex-col justify-around'>
-                      <li>1. Use "Post us" to get instant quotations on any designs you have.</li>
+                      <li>1. Use Post us to get instant quotations on any designs you have.</li>
                       <li>2. Use our catalogue to get instant quotations on any designs</li>
                     </ol>
 
