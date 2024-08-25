@@ -1,13 +1,12 @@
 'use client'
 
-import dynamic from 'next/dynamic';
+import { CldImage } from "next-cloudinary";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { formatDistanceToNow, parseISO } from 'date-fns';
 import { Separator } from "./ui/separator";
 import OrderProgress from "./OrderProgress";
 import { useRouter } from 'next/navigation';
 
-const CldImage = dynamic(() => import('next-cloudinary').then(mod => mod.CldImage), { ssr: false });
 
 
 export const RelativeTime = ({ date }) => {
