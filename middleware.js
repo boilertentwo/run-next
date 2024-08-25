@@ -29,7 +29,6 @@ export const config = {
     matcher: ['/model','/orders','/notification' ,'/login'],
     unstable_allowDynamic: [
         './components/UserOrders.jsx',
-        './lib/appwrite.config.js',
-        '/node_modules/next-cloudinary/**', 
+        'next-cloudinary/dist/index.mjs' , 
       ],
 };
