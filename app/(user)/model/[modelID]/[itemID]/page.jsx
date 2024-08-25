@@ -9,6 +9,8 @@ import { cookier } from '@/app/test';
 import { makeOrder } from '@/lib/appwrite.config';
 import { toast } from 'sonner';
 
+import { AccordionTrigger, Accordion, AccordionContent, AccordionItem } from '@/components/ui/accordion';
+
 export default function ImageForm({ params }) {
   const { handleSubmit, control, watch,reset, formState: { errors } } = useForm();
   const [user, setUser] = useState();
@@ -102,7 +104,6 @@ export default function ImageForm({ params }) {
       sheets: noOfSheets,
       material: materialType
     };
-    console.log(orderObj)
     makeOrder(orderObj)
     .then((result)=>toast('Hurray! Your order is placed',{description:'We will get back to you in 24 hours'}))
     .catch((error)=>toast('Try again',{description:'Error occured while placing order'}))
@@ -113,7 +114,27 @@ export default function ImageForm({ params }) {
   return (
     <>
       <main className='h-screen w-full p-3 space-y-5 md:flex md:gap-10'>
-        <div className="relative max-h-[600px] md:w-4/5 border-2 rounded-lg p-6 flex lg:mr-28 lg:px-28 lg:mt-4">
+      <Accordion collapsible className='w-full text-transparent border-2 border-amber-300 bg-gradient-to-r from-amber-300 to-amber-700 bg-clip-text rounded-lg px-4'>
+          <AccordionItem value='item-1'>
+                  <AccordionTrigger className='h-10'>
+                    <span className='font-extrabold text-center'>Enter measurement in MM ...  </span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className='p-4 bg-transparent '>
+                    <ol className='flex flex-col justify-around'>
+                      <li>1. Enter height, width and border required of your material.</li>
+                      <li>2. Press on the quotation to confirm measurements.</li>
+                      <li>3. Choose no of sheets required and the material type.</li>
+                      <li>4. Place order once satisfied with the entries.</li>
+                    </ol>
+
+                    </div>
+                    
+                  </AccordionContent>
+          </AccordionItem>
+          
+        </Accordion>
+        <div className="relative max-h-[600px] md:w-4/5 border-2 border-amber-300 rounded-lg p-6 flex lg:mr-28 lg:px-28 lg:mt-4">
           {/* Image */}
           <div className="h-full absolute inset-0 p-3 flex-grow flex flex-row justify-center">
             <CldImage

@@ -129,9 +129,9 @@ export function UserReference() {
                     <CardTitle className='text-2xl text-amber-400 flex flex-row items-center gap-2'>
                         Post us
                     </CardTitle>
-                    <CardDescription>
+                    {/* <CardDescription>
                         Have a design in mind?
-                    </CardDescription>
+                    </CardDescription> */}
                 </CardHeader>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <CardContent className="space-y-4">

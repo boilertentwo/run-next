@@ -44,7 +44,7 @@ export default function LoginCard(){
       const userString = await logSession(userId,pin)
       const user = JSON.parse(userString)
       
-     
+        console.log()
         setUser(user)
         toast("Welcome to orderBook",{description:"Now fully access our features and services."})
         setLoading(false)

@@ -65,7 +65,43 @@
     transform: translateX(-50%);
   }
 }
+@layer utilities {
+  @keyframes progressNone{
+    from {width: 0%;}
+    to {width: 0%;}
+  }
 
+  @keyframes progressVerified {
+    from { width: 0%; }
+    to { width: 33%; } /* Progress up to Verified */
+  }
+
+  @keyframes progressCrafting {
+    from { width: 33%; }
+    to { width: 66%; } /* Progress up to Crafting */
+  }
+
+  @keyframes progressFull {
+    from { width: 66%; }
+    to { width: 100%; } /* Full progress */
+  }
+
+  .progress-none {
+    animation: progressNone 2s ease-in-out forwards;
+  }
+
+  .progress-verified {
+    animation: progressVerified 2s ease-in-out forwards;
+  }
+
+  .progress-crafting {
+    animation: progressCrafting 2s ease-in-out forwards;
+  }
+
+  .progress-full {
+    animation: progressFull 2s ease-in-out forwards;
+  }
+}
 .animate-scroll {
   animation: scroll 15s linear infinite;
   display: flex;

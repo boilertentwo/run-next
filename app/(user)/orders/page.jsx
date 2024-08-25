@@ -1,7 +1,11 @@
-export default function Orderpage(){
+import { ListOrders } from "@/lib/appwrite.config";
+
+export default function OrderPage(){
     return(
         <>
-            <h1>Orderpage</h1>
+            <main className="flex flex-col flex-wrap justify-between gap-4 p-4">
+                    <ListOrders/>
+            </main>
         </>
-    );
+    )
 }

@@ -17,19 +17,19 @@ export default function MaterialsSection() {
       </span>
       <div className="w-full flex flex-row justify-between items-center overflow-x-auto text-black font-bold scrollbar-hide space-x-4 px-4">
         {/* Material Boxes */}
-        <div className="min-w-36 h-36 border-2 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-rose-600 to-white">
+        <div className="min-w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-rose-600 to-white">
           <span>MDF</span>
         </div>
-        <div className="min-w-36 h-36 border-2 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-amber-400 to-white">
+        <div className="min-w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-amber-400 to-white">
           <span>WPC</span>
         </div>
-        <div className="min-w-36 h-36 border-2 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-yellow-700 to-white">
+        <div className="min-w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-yellow-700 to-white">
           <span>WOOD</span>
         </div>
-        <div className="min-w-36 h-36 border-2 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-emerald-400 to-emerald-200">
+        <div className="min-w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gradient-to-r from-emerald-400 to-emerald-200">
           <span>ACRYLIC</span>
         </div>
-        <div className="min-w-36 h-36 border-2 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gray-300 text-gray-500">
+        <div className="min-w-36 h-36 border-2 border-amber-300 rounded-lg flex flex-col items-center justify-center opacity-75 bg-gray-300 text-gray-500">
           <span className="text-center">MS (upcoming)</span>
           
         </div>

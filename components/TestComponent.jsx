@@ -9,7 +9,7 @@ export default function ClientImageGallery({ images }) {
   const router = useRouter();
   return (
     <>
-    <div className="h-auto w-full flex flex-row justify-around items-start p-2 scroll-smooth snap-mandatory snap-x overflow-x-auto gap-4">
+    <div className="h-auto w-full flex flex-row justify-around items-start p-2 scroll-smooth snap-mandatory snap-x overflow-x-auto gap-6">
       {
         images.map((obj, index) => (
           <CldImage
