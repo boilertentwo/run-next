@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import CircleLoad from './Circleloader';
+import { CircleCheck } from 'lucide-react';
 
 export default function OrderProgress({ verified, crafted, delivered }) {
   const [progressClass, setProgressClass] = useState('');
@@ -27,16 +28,22 @@ export default function OrderProgress({ verified, crafted, delivered }) {
           {!verified ? (
              <>
              <div className='flex'>
-             <span>
+             <span className='animate-loading'>
                   Verifying
              </span>
-             <CircleLoad />
+             {/* <CircleLoad /> */}
              </div>
          </>
          
             
           ) : (
-            <span className='text-emerald-500'>Verified</span>
+            <>
+              <div className='flex justify-between items-center gap-1'>
+              <span className='text-emerald-500 '>Verified</span>
+              <CircleCheck className='size-5 stroke-emerald-500'/>
+              </div>
+              
+            </>
           )}
         </div>
 
@@ -45,15 +52,21 @@ export default function OrderProgress({ verified, crafted, delivered }) {
           {verified && !crafted ? (
              <>
              <div className='flex'>
-             <span>
+             <span className='animate-loading'>
                   crafting
              </span>
-             <CircleLoad />
+             {/* <CircleLoad /> */}
              </div>
          </>
          
           ) : crafted ? (
-            <span className='text-emerald-500'>Crafted</span>
+            <>
+              <div className='flex items-center gap-1'>
+              <span className='text-emerald-500 '>Crafted</span>
+              <CircleCheck className='size-5 stroke-emerald-500'/>
+              </div>
+              
+            </>
           ) : null}
         </div>
 
@@ -62,15 +75,22 @@ export default function OrderProgress({ verified, crafted, delivered }) {
           {crafted && !delivered ? (
             <>
                 <div className='flex'>
-                <span>
+                <span className='animate-loading'>
                      Delivering
                 </span>
-                <CircleLoad />
+                {/* <CircleLoad /> */}
                 </div>
             </>
             
           ) : delivered ? (
-            <span className='text-emerald-500'>Delivered</span>
+            <>
+              <div className='flex items-center gap-1'>
+              <span className='text-emerald-500 '>Delivered</span>
+              <CircleCheck className='size-5 stroke-emerald-500'/>
+              </div>
+              
+            </>
+            
           ) : null}
         </div>
       </div>
