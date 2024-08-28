@@ -44,7 +44,7 @@ export default function LoginCard(){
       const userString = await logSession(userId,pin)
       const user = JSON.parse(userString)
       
-        console.log()
+        console.log(user)
         setUser(user)
         toast("Welcome to orderBook",{description:"Now fully access our features and services."})
         setLoading(false)
@@ -83,7 +83,7 @@ export default function LoginCard(){
   }
     return(
         <>
-            <Card className='h-84 max-w-80'>
+            <Card className='h-84 max-w-80 border-2 border-amber-300 rounded-lg'>
                 <CardHeader>
                 <CardTitle className='text-2xl font-bold flex flex-row items-center gap-2'>
                     Login through OTP

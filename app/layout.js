@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Themeprovider from "@/components/Themeprovider";
-import Header from "@/components/Header";
-import Statusbar from "@/components/StatusMessage";
 import { AuthProvider } from "@/context/authContext";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -21,8 +19,6 @@ export default function RootLayout({ children }) {
         <body className={`${inter.className} md:px-10`}>
         <AuthProvider>
         <Themeprovider>
-              <Header></Header>
-              <Statusbar/>
                {children}
                <Toaster/>
           </Themeprovider>

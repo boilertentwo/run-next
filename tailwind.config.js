@@ -89,6 +89,7 @@ module.exports = {
           '0%, 100%': { color: '#1e3a8a' }, 
           '50%': { color: '#3b82f6' },    
         },
+        
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -98,6 +99,7 @@ module.exports = {
         'check-bounce': 'check-bounce 0.5s ease-in-out forwards',
         'vibrate': 'vibrate 0.5s linear infinite',
         loading: 'loading 1.5s ease-in-out infinite',
+        
       },
     },
   },

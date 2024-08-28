@@ -120,7 +120,7 @@ export default function UserOrders({ orders }) {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <section className="flex flex-col sm:flex-col md:flex-col lg:flex-row justify-between items-start lg:items-center px-4 py-2 space-y-4 lg:space-y-0">
+                      <section className="flex flex-col sm:flex-col md:flex-col lg:flex-row lg:flex-wrap justify-between items-start lg:items-center px-4 py-2 space-y-4 lg:space-y-0">
                         {/* Image Section */}
                         <div className="relative w-full lg:w-1/3 h-32 px-4 lg:h-36 overflow-hidden">
                           <Button

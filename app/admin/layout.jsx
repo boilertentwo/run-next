@@ -1,18 +1,19 @@
+import { Toaster } from "sonner";
 import Header from "@/components/Header";
 
-import Statusbar from "@/components/StatusMessage";
 export const metadata = {
-    title: "Login | orderBook",
+    title: "Admin | orderBook",
   
     description: "Get CNC crafts at lowest price",
   };
-export default function AuthLayout({children}){
+
+export default function AdminLayout({children}){
     return(
         <>
             <main>
-                <Header></Header>
-                <Statusbar/>
+                <Header/>
                 {children}
+                <Toaster/>
             </main>
         </>
     )

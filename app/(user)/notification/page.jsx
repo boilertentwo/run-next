@@ -1,7 +1,8 @@
+import { Skeleton } from "@/components/ui/skeleton"
 export default function Notification(){
     return(
         <>
-            <h1>Notifications</h1>
+             <Skeleton className='size-36 border-2 border-amber-400 animate-moveAlongBorder '/>
         </>
     )
 }
