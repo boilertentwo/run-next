@@ -7,10 +7,15 @@ import { AccordionTrigger, Accordion, AccordionContent, AccordionItem } from '@/
 const HeroSlide = ({ title, bgImage }) => {
   return (
     <div
-      className="flex flex-row items-center justify-center bg-cover md:bg-contain bg-center bg-no-repeat w-full h-full"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      className="w-full h-full flex flex-col items-center justify-center bg-cover md:bg-contain bg-center bg-no-repeat "
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
     >
-      <h1 className="text-center md:w-96 md:h-64 md:w-80 md:mt-48 mt-10 text-3xl md:text-4xl lg:ml-24 font-bold">{title}</h1>
+      <h1 className="text-center top-48 md:h-64 lg:w-80 lg:mt-48 mt-24 text-4xl  lg:ml-24 font-bold">{title}</h1>
     </div>
   );
 };
@@ -49,7 +54,7 @@ export default function Home() {
                 <HeroSlide title="PICK-UP, CRAFTING AND DELIVERY!" description="This is the third slide" bgImage={'/3.jpg'} />
             </Scroller>
           </div>
-          <div className="relative z-10 w-3/4 mt-28 mx-4 md:w-1/3 md:w-80 md:right-10 md:w-1/3 md:mx-0 md:ml-auto">
+          <div className="relative hidden sm:flex z-10 w-3/4 mt-28 mx-4 md:w-1/3 md:w-80 md:right-10 md:w-1/3 md:mx-0 md:ml-auto">
                 <UserReference />
           </div>
         </div>
